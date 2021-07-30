@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'tacategory_name'
+      'category_name'
     ],
     include: [
       {
