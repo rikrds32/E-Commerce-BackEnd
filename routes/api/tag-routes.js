@@ -52,11 +52,39 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
+  Tag.create({
+    id: req.body.id,
+    tag_name: req.body.tag_name
+  })
+  .then(tagsdb => res.json(tagsdb))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
+
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-
+  Tag.update({
+    tag_name: req.body.tag_name
+  },
+  {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(tagsdb => {
+    if(!tagsdb) {
+      res.status(404).json({ message: 'not found' });
+      return;
+    }
+    res.json(tagsdb);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.delete('/:id', (req, res) => {
