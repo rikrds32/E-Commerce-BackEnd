@@ -6,7 +6,7 @@ Internet retail, also known as **e-commerce**, is the largest sector of the elec
 
 This is a video of the functionality.
 
-![E-Commerce-demo](./images/e-commerce.webm)
+![E-Commerce-Gif](./images/E-Commerce-Gif.gif)
 
 ## Technoligies Used
 
